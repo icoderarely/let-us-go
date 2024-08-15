@@ -48,7 +48,8 @@ func readFile() float64 {
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) {
 			fmt.Println("First write to a file")
-			return 0
+			panic(err)
+			// return 0
 		}
 		fmt.Println("Error reading the file:", err)
 		return 0
